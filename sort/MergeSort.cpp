@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<stdlib.h>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ void MergeSort(vector<int> &A,int begin_,int end_){
 int main(){
 	std::vector<int> A;
 	for(int i=10;i>=-10;i--){
-		A.push_back(i);
+		A.push_back(rand()%2000);
 	}
 	for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
 	cout<<endl;
