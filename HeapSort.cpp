@@ -48,12 +48,9 @@ void HeapSort(vector<int> &A) {
 }
 
 int main() {
-	//vector<int> A=[1,3,2,4,5,6,7,11,12,13];
+	
 	std::vector<int> A;
 	A = { 1,3,2,5,4,6,7,11,12,-5,32,0,19,-9,-19,20};
-	//Build_Max_Heap(A);
-	
-	//Max_Heapify(A, 1);
 	HeapSort(A);
 	for (int i = 0; i<A.size(); i++) {
 		std::cout << A[i] << endl;
