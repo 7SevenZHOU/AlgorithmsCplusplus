@@ -41,8 +41,8 @@ void HeapSort(vector<int> &A) {
 		temp.push_back(A[i]);
 		A.pop_back();
 		Max_Heapify(A, 0);
-
 	}
+	
 	temp.push_back(A[0]);
 	A = temp;
 }
