@@ -43,7 +43,7 @@ void MergeSort(vector<int> &A,int begin_,int end_){
 		int m=(begin_+end_)/2;
 		MergeSort(A,begin_,m);
 		MergeSort(A,m+1,end_);
-		Merge(A,begin_,m,end_);
+		Merge(A,begin_,end_,m);
 	}
 
 
@@ -60,5 +60,13 @@ int main(){
 	//A={1,2,3,4};
 	MergeSort(A,0,20);
 	for(int i=0;i<A.size();i++) cout<<A[i]<<endl;
+
+	std::vector<int> B;
+	B.push_back(1);
+	B.push_back(3);
+	B.push_back(2);
+	B.push_back(4);
+	Merge(B,0,3,1);
+	for(int i=0;i<B.size();i++) cout<<B[i]<<" ";
 	return 0;
 }
