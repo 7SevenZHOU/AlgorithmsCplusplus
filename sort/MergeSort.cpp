@@ -53,21 +53,16 @@ void MergeSort(vector<int> &A,int begin_,int end_){
 
 int main(){
 	std::vector<int> A;
-	for(int i=10;i>=-10;i--){
+	for(int i=0;i<21;i++){
 		A.push_back(rand()%2000);
 	}
+
 	for(int i=0;i<A.size();i++) cout<<A[i]<<" ";
 	cout<<endl;
-	//A={1,2,3,4};
+
 	MergeSort(A,0,20);
+	
 	for(int i=0;i<A.size();i++) cout<<A[i]<<endl;
 
-	std::vector<int> B;
-	B.push_back(1);
-	B.push_back(3);
-	B.push_back(2);
-	B.push_back(4);
-	Merge(B,0,3,1);
-	for(int i=0;i<B.size();i++) cout<<B[i]<<" ";
 	return 0;
 }
