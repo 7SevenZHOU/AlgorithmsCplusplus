@@ -48,14 +48,15 @@ void HeapSort(vector<int> &A) {
 }
 
 int main() {
-	
-	std::vector<int> A;
-	A = { 1,3,2,5,4,6,7,11,12,-5,32,0,19,-9,-19,20};
+    vector<int> A;
+    for(int i=0;i<=40;i++){
+        A.push_back(rand()%100);
+    }
 	HeapSort(A);
 	for (int i = 0; i<A.size(); i++) {
 		std::cout << A[i] << endl;
 	}
-	system("pause");
+	
 
 	return 0;
 
