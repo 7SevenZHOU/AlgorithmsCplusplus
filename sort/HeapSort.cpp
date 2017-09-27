@@ -57,7 +57,6 @@ int main() {
 		std::cout << A[i] << endl;
 	}
 	
-
 	return 0;
 
 }
