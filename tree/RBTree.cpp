@@ -138,8 +138,59 @@ void RBTree<T>::insert(key T){
 
 template<class T>
 void insertFixUp(Node<T> *&tree,Node<T> *x){
-	
+	while(x->parent&&x->parent->color==RED)
+	{
+		if(x->parent==x->parent->parent->left)
+		{
+			Node<T> *y=x->parent->parent->right;
+			if(y->color==RED)
+			{
+				x->parent->color=BLACK;
+				x->parent->parent->color=RED;
+				y->color=BLACK;
+				x=x->parent->parent;
+			}
+			else if(x=x->parent->right)
+			{
+				x=x->parent;
+				leftRotate(root,x);
+			}
+			else
+			{
+				x->parent->color=BLACK;
+				x->parent->parent->color=RED;
+				rightRotate(root,x->parent->parent);
+			}
 
+
+		}
+		else
+		{
+			Node<T> *y=x->parent->parent->left;
+			if(y->color==RED)
+			{
+				x->parent->color=BLACK;
+				x->parent->parent->color=RED;
+				y->color=BLACK;
+				x=x->parent->parent;
+			}
+			else if(x=x->parent->left)
+			{
+				x=x->parent;
+				rightRotate(root,x);
+			}
+			else
+			{
+				x->parent->color=BLACK;
+				x->parent->parent->color=BLACK;
+				leftRotate(root,x->parent->parent);
+			}
+
+		}
+	}
+	root->color=BLACK;
 }
+
+
 
 
