@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int MatrixChainOrder(const vector<int> &p)
+std::tuple<int,vector<vector<int> > > MatrixChainOrder(const vector<int> &p)
 {
 	int n=p.size()-1;
 	vector<vector<int> > m(n+1,vector<int>(n+1,0));
@@ -25,8 +25,22 @@ int MatrixChainOrder(const vector<int> &p)
 			}
 		}
 	}
-	return m[1][n];
+	return {m[1][n],s};
 }
+
+void PrintOptimalParens(const vector<vector<int> > &s,int i,int j){
+	if(i==j)
+		printf("A%i",i);
+	else
+	{
+		cout<<"(";
+		PrintOptimalParens(s,i,s[i][j]);
+		PrintOptimalParens(s,s[i][j]+1,j);
+		cout<<")";
+	}
+}
+
+
 
 int main(){
 	vector<vector<int> > p(6,vector<int>(2));
@@ -53,9 +67,11 @@ int main(){
 		}
 		cout<<endl;
 	}
-	int r1=MatrixChainOrder(a);
-	cout<<r1<<endl;
-	int r2=MatrixChainOrder(b);
+	//int r1=MatrixChainOrder(a);
+	//cout<<r1<<endl;
+	auto [r2,s]=MatrixChainOrder(b);
 	cout<<r2<<endl;
+	PrintOptimalParens(s,1,6);
+
 	return 0;
 }
