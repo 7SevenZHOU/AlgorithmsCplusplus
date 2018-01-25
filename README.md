@@ -1,2 +1,2 @@
 # AlgorithmsCplusplus
-Algorithms in C++ for book _Introduction to Algorithms_
+Code in C++ for book _Introduction to Algorithms(CLRS,3rd)_
